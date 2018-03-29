@@ -5,7 +5,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Router } from 'react-router-dom';
 import createHistory from 'history/createBrowserHistory';
-import App from './App/index.js';
+import App from './containers/App/index.js';
 import './main.css';
 
 const history = createHistory();

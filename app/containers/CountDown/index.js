@@ -37,7 +37,7 @@ class CountDown extends PureComponent {
                 console.log(err);
             }.bind(this)
         });*/
-        fetch("http://118.89.39.101:5000/getData",{
+        /*fetch("http://118.89.39.101:5000/getData",{
             method: 'GET',
             mode: 'cors',
             headers: {
@@ -51,7 +51,7 @@ class CountDown extends PureComponent {
             console.log(data);
         }).catch((err) => {
             throw err;
-        });
+        });*/
     }
     timer;
     ctx;
