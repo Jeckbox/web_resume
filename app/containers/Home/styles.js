@@ -18,12 +18,11 @@ export const Main = styled.div`
 export const Container = styled.div`
     width: 100%;
     background: #101010;
-    display: flex;
-    justify-content: center;
 `;
 export const ContainerInner = styled.div`
     width: 1250px;
     box-sizing: boredr-box;
+    margin: 0 auto;
     position: relative;
 `;
 export const FirstBox = styled.div`
@@ -196,3 +195,93 @@ export const SeeMoreBtn = styled.div`
     width: 360px;
     height: 59px;
 `;
+export const FlexEnd = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+`;
+export const FlexSpace = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+`;
+export const LineThrough= styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    font-size: 25px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.67;
+    letter-spacing: 20px;
+    text-align: left;
+    color: #ffffff;
+    margin-right: 50px;
+`;
+export const Line= styled.div`
+    width: 107px;
+    height: 3px;
+    mix-blend-mode: undefined;
+    background-color: #13f42e;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    margin-top: -1px;
+`;
+export const HobbyBox= styled.div`
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+`;
+export const Hobby= styled.div`
+    width: 157px;
+    height: 157px;
+    background-color: #ffffff;
+    box-sizing: boredr-box;
+    border: 2px solid #000000;
+    transform-origin: center center;
+    transform: rotate(${(props) => props.rotate}deg) translateY(${(props) => props.translate}px);
+`;
+export const TextRightBox= styled.div`
+    text-align: right;
+`;
+export const TextRight= styled.div`
+    font-size: 14px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.79;
+    letter-spacing: 2.8px;
+    text-align: right;
+    color: #c6c6c6;
+`;
+export const KeepBtn= styled.div`
+    width: 142px;
+    height: 30px;
+    background-color: #ffffff;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    margin-top: 50px;
+`;
+export const FlexCenter= styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+
+
+
+
+
+
+
+
+
+

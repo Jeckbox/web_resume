@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-
+// import $ from 'jquery';
 import StarBg from 'components/StarBg/index.js';
-// import Wave from 'components/Wave/index.js';
+import Wave from 'components/Wave/index.js';
 import Graph from 'components/Graph/index.js';
 import NavTab from 'components/NavTab/index.js';
 
@@ -39,6 +39,16 @@ import {
     ImgItem,
     ImgBoxRightTop,
     SeeMoreBtn,
+    FlexEnd,
+    LineThrough,
+    Line,
+    FlexSpace,
+    HobbyBox,
+    Hobby,
+    TextRightBox,
+    TextRight,
+    KeepBtn,
+    FlexCenter,
 } from './styles.js';
 
 const navData = [
@@ -47,15 +57,20 @@ const navData = [
     { id: 3, text: 'pc端' },
 ];
 
+const RandomNum = (Min,Max) => {  
+    var Range = Max - Min;  
+    var Rand = Math.random();     
+    var num = Min + Math.round(Rand * Range);  
+    return num;  
+};  
 class Home extends PureComponent {
-    componentDidMount() {    
-    }
+
     render() {
         return(
             <Content>
                 <Helmet title="简历" />
                 <StarBg />
-                <Main>
+                <Main innerRef={(ref) => { this.main = ref; }}>
                     <Graph></Graph>
                     <Container>
                         <ContainerInner>
@@ -177,7 +192,58 @@ class Home extends PureComponent {
                                 </ImgBox>
                                 <SeeMoreBtn>查看更多</SeeMoreBtn>
                             </ShowBox>
+                            <FirstBox style={{ marginTop: '112px', paddingRight: '116px' }}>
+                                <FirstInner>
+                                    <Text style={{ fontSize: '45px', color: '#ffffff' }}>Hobbies & Interster </Text>
+                                    <Text style={{ fontSize: '25px', color: '#ffffff', letterSpacing: '24.5px' }}>个人兴趣&爱好</Text>
+                                </FirstInner>
+                                <FlexEnd>
+                                    <LineThrough>
+                                        ACG
+                                        <Line></Line>
+                                    </LineThrough>
+                                    <Text style={{ fontSize: '14px', color: '#ffffff', letterSpacing: '11.2px' }}>年龄无关</Text>
+                                </FlexEnd>
+                            </FirstBox>
+                            <FlexSpace style={{ marginTop: '170px' }}>
+                                <HobbyBox>
+                                    <Hobby rotate={RandomNum(-90, 90)} translate={RandomNum(-50, 20)}></Hobby>
+                                    <Hobby rotate={RandomNum(-90, 90)} translate={RandomNum(-50, 20)}></Hobby>
+                                    <Hobby rotate={RandomNum(-90, 90)} translate={RandomNum(-50, 20)}></Hobby>
+                                    <Hobby rotate={RandomNum(-90, 90)} translate={RandomNum(-50, 20)}></Hobby>
+                                </HobbyBox>
+                                <TextRightBox style={{ paddingRight: '116px' }}>
+                                    <TextRight>热爱一切源于生活</TextRight>
+                                    <TextRight>聆听街头</TextRight>
+                                    <TextRight>感受每次更新</TextRight>
+                                    <TextRight>每次上线的快感</TextRight>
+                                    <KeepBtn>keep</KeepBtn>
+                                </TextRightBox>
+                            </FlexSpace>
+                            <FlexSpace style={{ marginTop: '180px' }}>
+                                <Text style={{ fontSize: '16px', color: '#ffffff', letterSpacing: '3.2px' }}>不同的同事，互相享受不同的知识</Text>
+                            </FlexSpace>
+                            <FlexCenter style={{ marginTop: '180px' }}>
+                                <Text style={{ fontSize: '84px', color: '#ffffff' }}>Thank you for</Text>
+                            </FlexCenter>
+                            <FlexCenter>
+                                <Text style={{ fontSize: '84px', color: '#ffffff' }}> watching！</Text>
+                            </FlexCenter>
+                            <FlexCenter style={{ marginTop: '55px' }}>
+                                <Text style={{ fontSize: '26px', color: '#ffffff', lineHeight: '2.56' }}>如果您喜欢我的经历</Text>
+                            </FlexCenter>
+                            <FlexCenter>
+                                <Text style={{ fontSize: '26px', color: '#ffffff', lineHeight: '2.56' }}>通过以下联系我</Text>
+                            </FlexCenter>
+                            <FlexCenter style={{ marginTop: '55px', marginBottom: '10px' }}>
+                                <IconBox>
+                                    <Icon style={{ marginLeft: '0px' }}></Icon>
+                                    <Icon></Icon>
+                                    <Icon></Icon>
+                                </IconBox>
+                            </FlexCenter>
                         </ContainerInner>
+                        <Wave />
                     </Container>
                 </Main>
             </Content>

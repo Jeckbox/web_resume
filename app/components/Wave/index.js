@@ -5,7 +5,6 @@ import $ from 'jquery';
 import styled from 'styled-components';
 const Content = styled.div`
     width: 100%;
-    height: 607px;
     min-width: 1280px;
 `;
 
@@ -48,13 +47,13 @@ class Wave extends PureComponent {
         this.canvas = document.getElementById('canvas'),
         this.ctx = canvas.getContext('2d'),
         this.W = window.innerWidth;
-        this.H = window.innerHeight;
+        this.H = 300;
         
         this.canvas.width = this.W;
         this.canvas.height = this.H;
         
-        this.color2 = "#101010",    //矩形1的颜色
-        this.color1 = "#202020";   //矩形2的颜色
+        this.color2 = "#1f7bfe",    //矩形1的颜色
+        this.color1 = "#1f59ef";   //矩形2的颜色
             
         this.vertexes = [],    //顶点坐标
         this.verNum = 250,     //顶点数
@@ -86,9 +85,10 @@ class Wave extends PureComponent {
                 mouse.x = e.clientX + document.body.scrollLeft +document.documentElement.scrollLeft;
                 mouse.y = e.clientY + document.body.scrollTop +document.documentElement.scrollTop;
             }
-    
+
+            const totalHeight = $(window).scrollTop() + window.innerHeight;
             //重设差分值
-            if(mouse.y>(that.H/2-100) && mouse.y<(that.H/2 +100)){
+            if(mouse.y>(totalHeight - 300) && mouse.y<(totalHeight)){
                 clearInterval(that.timer);
                 that.autoDiff = 2000;
                 that.vPos = 1 + Math.floor((that.verNum - 2) * mouse.x / that.W);
@@ -166,7 +166,7 @@ class Wave extends PureComponent {
     render() {
         return(
             <Content innerRef={(ref) => { this.content = ref; }}>
-                <Canvas id="canvas" height={$(this.content).height()} width={$(this.content).width()} />
+                <Canvas id="canvas" />
             </Content>
         );
     }
